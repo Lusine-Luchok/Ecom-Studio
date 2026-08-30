@@ -3,795 +3,320 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ecom Studio | Luxury Shopify & Freelancing</title>
-  <meta name="description" content="Premium Shopify, Upwork, freelancing, real projects and practical experience." />
+  <title>Ecom Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #f6f1ea;
+      --bg-soft: #fbf8f4;
+      --text: #2d221c;
+      --muted: #6f6258;
+      --line: rgba(45,34,28,0.12);
+      --accent: #b08b68;
+      --accent-dark: #8e6c4d;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(35, 25, 18, 0.08);
+      --radius: 24px;
+      --container: 1200px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #faf8f5;
-      color: #1e1c1a;
+      background: linear-gradient(180deg, #f8f3ed 0%, #f6f1ea 100%);
+      color: var(--text);
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 18px;
     }
 
+    a { text-decoration: none; }
+
     .container {
-      width: min(1200px, 92%);
+      width: min(92%, var(--container));
       margin: 0 auto;
     }
 
-    /* ----- HEADER (premium) ----- */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(250, 248, 245, 0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(30, 28, 26, 0.06);
-      transition: 0.3s;
-    }
-
-    nav {
-      min-height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: #1e1c1a;
-      transition: 0.3s;
-    }
-    .logo:hover { opacity: 0.7; }
-
-    .menu {
-      display: flex;
-      gap: 32px;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.4px;
-    }
-
-    .menu a {
-      color: #2b2825;
-      opacity: 0.6;
-      transition: 0.3s;
+    .about-preview {
+      padding: 110px 0;
       position: relative;
-    }
-    .menu a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1.5px;
-      background: #b8a48c;
-      transition: 0.4s ease;
-    }
-    .menu a:hover {
-      opacity: 1;
-    }
-    .menu a:hover::after {
-      width: 100%;
-    }
-
-    /* ----- HERO (luxury) ----- */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 100px;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 80px;
-    }
-
-    .small-label {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      color: #9b8a7a;
-      font-weight: 500;
-      border-left: 2px solid #cbb7a4;
-      padding-left: 18px;
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(52px, 8vw, 96px);
-      font-weight: 500;
-      line-height: 0.96;
-      margin-bottom: 30px;
-      letter-spacing: -0.02em;
-      color: #1e1c1a;
-    }
-    h1 .accent {
-      font-style: italic;
-      color: #b8a48c;
-      font-weight: 400;
-    }
-
-    .hero-text {
-      max-width: 520px;
-      font-size: 18px;
-      color: #5e5a55;
-      font-weight: 300;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 0 34px;
-      border-radius: 60px;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn-dark {
-      background: #1e1c1a;
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(30, 28, 26, 0.12);
-    }
-    .btn-dark:hover {
-      transform: translateY(-3px);
-      background: #2f2b28;
-      box-shadow: 0 14px 30px rgba(30, 28, 26, 0.18);
-    }
-
-    .btn-light {
-      border: 1px solid #c9bcb0;
-      background: transparent;
-      color: #1e1c1a;
-    }
-    .btn-light:hover {
-      background: #ffffff;
-      border-color: #b8a48c;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-    }
-
-    /* ----- IMAGE SLIDER (premium) ----- */
-    .hero-slider {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      border-radius: 260px 260px 30px 30px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(30, 28, 26, 0.06);
-      background: #e8dfd6;
     }
 
-    .slider-track {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .slide {
-      flex: 0 0 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-color: #ddd2c7;
-      will-change: transform;
-    }
-
-    /* Dots / Thumbnails */
-    .slider-controls {
+    .about-preview::before {
+      content: "";
       position: absolute;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 14px;
-      z-index: 10;
-      background: rgba(255, 255, 245, 0.3);
-      backdrop-filter: blur(12px);
-      padding: 10px 20px;
-      border-radius: 60px;
-      border: 1px solid rgba(255,255,245,0.2);
+      width: 420px;
+      height: 420px;
+      top: -140px;
+      right: -110px;
+      background: radial-gradient(circle, rgba(176,139,104,0.18) 0%, rgba(176,139,104,0) 70%);
+      pointer-events: none;
     }
 
-    .dot {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: rgba(255, 255, 245, 0.2);
-      background-size: cover;
-      background-position: center;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.4s ease;
-      opacity: 0.5;
-      transform: scale(0.92);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .dot:hover {
-      opacity: 0.9;
-      transform: scale(0.98);
-    }
-    .dot.active {
-      border-color: #ffffff;
-      opacity: 1;
-      transform: scale(1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    /* slide images (placeholder) */
-    .slide-1 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500"><rect width="400" height="500" fill="%23d6cbbc"/><text x="50" y="250" font-family="Playfair Display, serif" font-size="32" fill="%234f4841" opacity="0.5">Studio</text></svg>'); }
-    .slide-2 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500"><rect width="400" height="500" fill="%23c9bcb0"/><text x="50" y="250" font-family="Playfair Display, serif" font-size="32" fill="%234f4841" opacity="0.5">Shopify</text></svg>'); }
-    .slide-3 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500"><rect width="400" height="500" fill="%23e4dad0"/><text x="50" y="250" font-family="Playfair Display, serif" font-size="32" fill="%234f4841" opacity="0.5">Freelance</text></svg>'); }
-
-    .dot-1 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60"><rect width="60" height="60" fill="%23d6cbbc"/><text x="10" y="40" font-family="Playfair Display, serif" font-size="20" fill="%234f4841" opacity="0.6">S</text></svg>'); }
-    .dot-2 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60"><rect width="60" height="60" fill="%23c9bcb0"/><text x="10" y="40" font-family="Playfair Display, serif" font-size="20" fill="%234f4841" opacity="0.6">P</text></svg>'); }
-    .dot-3 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60"><rect width="60" height="60" fill="%23e4dad0"/><text x="10" y="40" font-family="Playfair Display, serif" font-size="20" fill="%234f4841" opacity="0.6">F</text></svg>'); }
-
-    /* ----- SECTIONS (premium) ----- */
-    section {
-      padding: 120px 0;
-    }
-
-    .section-label {
-      font-size: 11px;
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      color: #b8a48c;
-      font-weight: 500;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(38px, 5vw, 64px);
-      font-weight: 500;
-      line-height: 1.08;
-      margin-bottom: 22px;
-      letter-spacing: -0.02em;
-      color: #1e1c1a;
+      color: var(--accent-dark);
+      margin-bottom: 18px;
     }
 
     .section-intro {
-      max-width: 620px;
-      color: #6b6560;
+      max-width: 780px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .section-intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 0.95;
+      font-weight: 600;
+      margin-bottom: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro p {
+      color: var(--muted);
       font-size: 17px;
-      font-weight: 300;
-      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 28px;
     }
 
-    /* ABOUT (dark luxury) */
-    .about {
-      background: #1e1c1a;
-      color: #f5f0eb;
-    }
-    .about .section-intro {
-      color: rgba(255, 247, 240, 0.7);
-    }
-    .about h2 {
-      color: #f5f0eb;
-    }
-    .about .section-label {
-      color: #cbb7a4;
-    }
-
-    /* TOPICS (cards) */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 60px;
-    }
-
-    .card {
-      min-height: 280px;
-      background: #ffffff;
-      padding: 40px 32px;
-      border-radius: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-      border: 1px solid rgba(30, 28, 26, 0.03);
-      box-shadow: 0 8px 28px rgba(30, 28, 26, 0.02);
-    }
-    .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 30px 60px rgba(30, 28, 26, 0.07);
-      border-color: #e5dbd1;
-    }
-
-    .card-number {
-      font-size: 12px;
-      font-weight: 500;
-      color: #b8a48c;
-      letter-spacing: 2px;
-    }
-
-    .card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      font-weight: 500;
-      margin-bottom: 12px;
-      color: #1e1c1a;
-    }
-    .card p {
-      color: #6b6560;
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.6;
-    }
-
-    /* PROJECTS (luxury grid) */
-    .projects {
-      background: #f3efe9;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      margin-top: 60px;
-    }
-
-    .project {
-      background: #ffffff;
-      border-radius: 30px;
-      overflow: hidden;
-      transition: 0.4s;
-      box-shadow: 0 6px 24px rgba(30, 28, 26, 0.03);
-    }
-    .project:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 50px rgba(30, 28, 26, 0.06);
-    }
-
-    .project-image {
-      height: 360px;
-      background: 
-        linear-gradient(135deg, #e4dad0, #cdc0b3),
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" opacity="0.06"><rect x="10" y="10" width="60" height="60" fill="none" stroke="%231e1c1a" stroke-width="0.5"/><circle cx="40" cy="40" r="14" fill="none" stroke="%231e1c1a" stroke-width="0.5"/></svg>');
-      background-size: cover, 30px 30px;
-      transition: 0.6s;
-    }
-    .project:hover .project-image {
-      transform: scale(1.02);
-    }
-
-    .project-content {
-      padding: 32px 30px 36px;
-    }
-    .project-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 500;
-      margin-bottom: 6px;
-      color: #1e1c1a;
-    }
-    .project-content p {
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 999px;
       font-size: 14px;
-      color: #8a827a;
-      font-weight: 300;
-      letter-spacing: 0.3px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 14px 30px rgba(176,139,104,0.28);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
-    /* CTA (premium dark) */
-    .cta-box {
-      background: #1e1c1a;
-      color: #f5f0eb;
-      border-radius: 40px;
-      padding: 90px 40px;
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(176,139,104,0.35);
+    }
+
+    .story-grid {
+      display: grid;
+      gap: 34px;
+      margin-top: 40px;
+    }
+
+    .story-card {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 34px;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.65);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .story-card.reverse {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .story-card.reverse .story-image {
+      order: 1;
+    }
+
+    .story-card.reverse .story-content {
+      order: 2;
+    }
+
+    .story-image {
       position: relative;
       overflow: hidden;
-      box-shadow: 0 30px 50px rgba(30, 28, 26, 0.08);
-    }
-    .cta-box::after {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(200,180,165,0.04) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .cta-box .section-label {
-      color: #cbb7a4;
-    }
-    .cta-box h2 {
-      color: #f5f0eb;
-      max-width: 700px;
-      margin: 0 auto 20px;
-    }
-    .cta-box p {
-      color: #b0a8a0;
-      max-width: 500px;
-      margin: 0 auto 34px;
-      font-weight: 300;
-    }
-    .cta-box .btn {
-      background: #ffffff;
-      color: #1e1c1a;
-      border: none;
-      box-shadow: 0 8px 24px rgba(255,255,255,0.08);
-    }
-    .cta-box .btn:hover {
-      background: #f0ebe5;
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(255,255,255,0.12);
+      border-radius: 20px;
     }
 
-    /* FOOTER */
-    footer {
-      padding: 48px 0;
-      border-top: 1px solid rgba(30, 28, 26, 0.04);
-      background: #faf8f5;
-    }
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      font-weight: 300;
-      color: #8a827a;
-      letter-spacing: 0.4px;
-    }
-    .footer-content span {
-      font-weight: 400;
-      color: #4f4841;
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 1.2s ease;
     }
 
-    /* ----- REVEAL (smooth) ----- */
+    .story-card:hover .story-image img {
+      transform: scale(1.07);
+    }
+
+    .story-content small {
+      display: inline-block;
+      color: var(--accent-dark);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 16px;
+    }
+
+    .story-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .story-content p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .quote-box {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-left: 2px solid rgba(176,139,104,0.5);
+      background: rgba(176,139,104,0.07);
+      border-radius: 14px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .quote-box strong {
+      color: var(--accent-dark);
+    }
+
+    /* reveal animation */
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      transform: translateY(32px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* ----- MOBILE (refined) ----- */
-    @media (max-width: 820px) {
-      .menu {
-        display: none;
-      }
-      .hero {
-        padding: 140px 0 70px;
-        min-height: auto;
-      }
-      .hero-grid {
+    @media (max-width: 900px) {
+      .story-card,
+      .story-card.reverse {
         grid-template-columns: 1fr;
-        gap: 50px;
+        padding: 20px;
       }
-      h1 {
-        font-size: 54px;
-      }
-      .hero-text {
-        font-size: 16px;
-      }
-      .hero-slider {
-        max-width: 380px;
-        margin: 0 auto;
-        border-radius: 180px 180px 20px 20px;
-      }
-      section {
-        padding: 80px 0;
-      }
-      .cards {
-        grid-template-columns: 1fr;
-      }
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-      .project-image {
-        height: 240px;
-      }
-      .cta-box {
-        padding: 60px 24px;
-        border-radius: 30px;
-      }
-      .footer-content {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-      }
-      .slider-controls {
-        gap: 10px;
-        padding: 8px 16px;
-        bottom: 18px;
-      }
-      .dot {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-      }
-    }
 
-    @media (max-width: 480px) {
-      .btn {
-        min-height: 48px;
-        padding: 0 24px;
-        font-size: 11px;
+      .story-card.reverse .story-image,
+      .story-card.reverse .story-content {
+        order: unset;
       }
-      .dot {
-        width: 34px;
-        height: 34px;
-        border-radius: 10px;
+
+      .story-image img {
+        min-height: 280px;
+      }
+
+      .about-preview {
+        padding: 80px 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- ABOUT PREVIEW SECTION -->
+  <section class="about-preview">
     <div class="container">
-      <nav>
-        <a href="#" class="logo">Ecom Studio</a>
-        <div class="menu">
-          <a href="#about">About</a>
-          <a href="#topics">Explore</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Connect</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO with Slider -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <span class="small-label">Shopify · Upwork · Freelancing</span>
-          <h1>
-            Build.<br>
-            <span class="accent">Grow.</span><br>
-            Freelance.
-          </h1>
-          <p class="hero-text">
-            Real experience, practical Shopify knowledge,
-            freelancing insights and projects from my journey
-            in eCommerce.
-          </p>
-          <div class="buttons">
-            <a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="btn btn-dark">
-              Follow on Instagram
-            </a>
-            <a href="#projects" class="btn btn-light">
-              View Projects
-            </a>
-          </div>
-        </div>
-
-        <!-- SLIDER -->
-        <div class="hero-slider reveal" id="heroSlider">
-          <div class="slider-track" id="sliderTrack">
-            <div class="slide slide-1"></div>
-            <div class="slide slide-2"></div>
-            <div class="slide slide-3"></div>
-          </div>
-          <div class="slider-controls" id="sliderControls">
-            <div class="dot dot-1 active" data-index="0"></div>
-            <div class="dot dot-2" data-index="1"></div>
-            <div class="dot dot-3" data-index="2"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="container reveal">
-        <div class="section-label">My Story</div>
+      <div class="section-intro reveal">
+        <span class="eyebrow">About Ecom Studio</span>
         <h2>From a traditional career<br>to freelancing.</h2>
-        <p class="section-intro">
-          This space is about real experience — learning Shopify,
-          building projects, working with international clients
-          and sharing the lessons I learn along the way.
+        <p>
+          This space is about real experience — learning Shopify, building projects,
+          working with international clients, and sharing the lessons I learn along the way.
         </p>
+        <a href="about.html" class="cta-btn">
+          Read My Story
+          <span>→</span>
+        </a>
       </div>
-    </section>
 
-    <!-- TOPICS -->
-    <section id="topics">
-      <div class="container">
-        <div class="reveal">
-          <div class="section-label">Explore</div>
-          <h2>What you'll find here</h2>
-          <p class="section-intro">
-            Practical content for people interested in Shopify,
-            Upwork and freelancing.
-          </p>
-        </div>
-        <div class="cards">
-          <div class="card reveal">
-            <div class="card-number">01</div>
-            <div>
-              <h3>Shopify</h3>
-              <p>Store setup, customization, product pages, design and practical Shopify tips.</p>
+      <div class="story-grid">
+
+        <!-- Text left / Image right -->
+        <div class="story-card reveal">
+          <div class="story-content">
+            <small>Real journey</small>
+            <h3>Not starting from zero — starting with experience.</h3>
+            <p>
+              After years in a traditional career, I chose to begin a completely new professional chapter.
+              What stayed with me was not just experience, but structure, discipline, communication, and leadership.
+            </p>
+            <p>
+              Today, those same skills continue to support my work in Shopify and freelancing,
+              helping me manage projects, clients, and growth with confidence.
+            </p>
+            <div class="quote-box">
+              <strong>My belief:</strong> Changing your profession doesn’t always mean starting from zero.
+              You take your experience with you — and begin a new path.
             </div>
           </div>
-          <div class="card reveal">
-            <div class="card-number">02</div>
-            <div>
-              <h3>Upwork</h3>
-              <p>Proposals, clients, real experiences, mistakes and lessons from freelancing.</p>
-            </div>
-          </div>
-          <div class="card reveal">
-            <div class="card-number">03</div>
-            <div>
-              <h3>Freelancing</h3>
-              <p>Career change, remote work, mindset and building an independent professional path.</p>
-            </div>
+
+          <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Professional workspace">
           </div>
         </div>
+
+        <!-- Image left / Text right -->
+        <div class="story-card reverse reveal">
+          <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Freelancing and Shopify work">
+          </div>
+
+          <div class="story-content">
+            <small>Why this blog exists</small>
+            <h3>Sharing the process, not only the results.</h3>
+            <p>
+              This blog was created to share real insights from my Shopify and Upwork journey —
+              the wins, the lessons, the mistakes, and the practical details that actually matter.
+            </p>
+            <p>
+              Here you’ll find useful tips, behind-the-scenes workflow, and before & after examples
+              from projects we build and improve.
+            </p>
+            <a href="about.html" class="cta-btn" style="margin-top: 12px;">
+              Learn More
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
       </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="reveal">
-          <div class="section-label">Selected Work</div>
-          <h2>Real Shopify projects</h2>
-          <p class="section-intro">
-            A selection of stores, landing pages and custom Shopify solutions.
-          </p>
-        </div>
-        <div class="project-grid">
-          <div class="project reveal">
-            <div class="project-image"></div>
-            <div class="project-content">
-              <h3>Shopify Store</h3>
-              <p>Store design · Customization · Mobile optimization</p>
-            </div>
-          </div>
-          <div class="project reveal">
-            <div class="project-image"></div>
-            <div class="project-content">
-              <h3>Landing Page</h3>
-              <p>Conversion-focused design · Custom development</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / CTA -->
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="cta-box reveal">
-          <div class="section-label">Let's Connect</div>
-          <h2>Follow the journey on Instagram.</h2>
-          <p>Shopify, Upwork, freelancing, real projects and practical experience.</p>
-          <a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="btn">
-            Visit Instagram
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-content">
-      <div>© 2026 <span>Ecom Studio</span></div>
-      <div>Shopify · Upwork · Freelancing</div>
     </div>
-  </footer>
+  </section>
 
   <script>
-    // ===== SLIDER LOGIC =====
-    const track = document.getElementById('sliderTrack');
-    const dots = document.querySelectorAll('.dot');
-    let currentIndex = 0;
-    const totalSlides = 3;
-    let autoSlideInterval;
+    const reveals = document.querySelectorAll('.reveal');
 
-    function goToSlide(index) {
-      if (index < 0) index = totalSlides - 1;
-      if (index >= totalSlides) index = 0;
-      currentIndex = index;
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-      
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
-      });
-    }
-
-    function nextSlide() {
-      goToSlide(currentIndex + 1);
-    }
-
-    // Click on dots
-    dots.forEach((dot) => {
-      dot.addEventListener('click', function() {
-        const index = parseInt(this.dataset.index);
-        goToSlide(index);
-        resetAutoSlide();
-      });
-    });
-
-    // Auto-slide
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(nextSlide, 4000);
-    }
-
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
-
-    // Pause on hover
-    const slider = document.getElementById('heroSlider');
-    slider.addEventListener('mouseenter', () => {
-      clearInterval(autoSlideInterval);
-    });
-    slider.addEventListener('mouseleave', () => {
-      startAutoSlide();
-    });
-
-    // Init
-    goToSlide(0);
-    startAutoSlide();
-
-    // ===== REVEAL ON SCROLL =====
-    const reveals = document.querySelectorAll(".reveal");
-    function revealOnScroll() {
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const top = el.getBoundingClientRect().top;
-        if (top < windowHeight - 70) {
-          el.classList.add("active");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
         }
       });
-    }
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
+    }, { threshold: 0.15 });
+
+    reveals.forEach(item => observer.observe(item));
   </script>
 
 </body>
