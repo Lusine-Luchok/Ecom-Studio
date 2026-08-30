@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Ecom Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f2ec;
+      --bg-soft: #fcf8f4;
+      --text: #2d221c;
+      --muted: #6e6258;
+      --accent: #b08b68;
+      --accent-dark: #8e6c4d;
+      --line: rgba(45,34,28,0.12);
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(35, 25, 18, 0.08);
+      --radius: 24px;
+      --container: 980px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #faf6f1 0%, #f7f2ec 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(92%, var(--container));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 90px 0 40px;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-dark);
+      font-size: 14px;
+      margin-bottom: 26px;
+    }
+
+    .hero span {
+      display: inline-block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-dark);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 6vw, 82px);
+      line-height: 0.95;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .about-content {
+      padding: 34px 0 90px;
+    }
+
+    .content-card {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      padding: 38px 32px;
+    }
+
+    .content-card p {
+      font-size: 17px;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .content-card strong {
+      color: var(--accent-dark);
+    }
+
+    .highlight-quote {
+      margin-top: 28px;
+      padding: 24px;
+      border-left: 3px solid rgba(176,139,104,0.55);
+      background: rgba(176,139,104,0.07);
+      border-radius: 18px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 70px 0 30px;
+      }
+
+      .content-card {
+        padding: 26px 20px;
+      }
+
+      .content-card p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <span>About</span>
+      <h1>My Story</h1>
+      <p>
+        Իմ ճանապարհը պետական համակարգից դեպի Shopify, freelancing և Ecom Studio։
+      </p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="content-card">
+        <p>
+          9 տարի պետական համակարգում աշխատելուց հետո որոշեցի ամբողջությամբ փոխել մասնագիտական ճանապարհս և սկսել նոր փուլ։
+        </p>
+
+        <p>
+          Տարիներ շարունակ աշխատել եմ նախարարություններից մեկում, զբաղեցրել եմ նաև ղեկավար պաշտոն։ Այդ աշխատանքն ինձ տվել է մեծ փորձ՝ կազմակերպման, գործընթացների համակարգման, միջազգային պատվիրակությունների հետ աշխատանքի և մարդկանց հետ հաղորդակցության ոլորտներում։ Եվ այսօր այդ փորձը շարունակում է օգնել ինձ արդեն բոլորովին այլ միջավայրում։
+        </p>
+
+        <p>
+          Աշխատանքից դուրս գալուց անմիջապես հետո սկսեցի սովորել <strong>Shopify</strong>, իսկ հետո՝ աշխատել միջազգային հարթակներում որպես freelancer։ Ինձ հատկապես գրավեց այն հնարավորությունը, որ այս ոլորտում կարող ես ինքդ կառավարել ժամանակդ, աշխատել աշխարհի տարբեր երկրներից հաճախորդների հետ և մասնագիտական աճդ կապել քո հմտությունների ու աշխատանքի իրական արդյունքի հետ։
+        </p>
+
+        <p>
+          Հետևողական աշխատանքի և պրակտիկայի շնորհիվ համեմատաբար կարճ ժամանակում Upwork-ում հասա <strong>100% Job Success Score-ի և Top Rated կարգավիճակի</strong>։ Այդ արդյունքներից հետո շատ մարդիկ սկսեցին ինձ հարցնել Shopify-ի, Upwork-ի և freelancing-ի մասին, և հենց այդ հետաքրքրությունն էլ դարձավ <strong>Ecom Studio</strong>-ն ստեղծելու պատճառներից մեկը։
+        </p>
+
+        <p>
+          Այս հարթակում կիսվում եմ իմ իրական փորձով, օգտակար խորհուրդներով, աշխատանքային ընթացքով, սխալներով ու կարևոր մանրուքներով, ինչպես նաև մեր իրականացրած Shopify նախագծերով և <strong>Before & After</strong> օրինակներով։
+        </p>
+
+        <div class="highlight-quote">
+          <strong>Իմ պատմությունից ինձ համար ամենակարևոր միտքը մեկն է՝</strong><br><br>
+          մասնագիտություն փոխելը միշտ չէ, որ նշանակում է ամեն ինչ սկսել զրոյից։  
+          Դու պարզապես տարիներով հավաքած փորձդ վերցնում ես քեզ հետ և սկսում նոր ճանապարհ։ 🤍
+        </div>
+
+        <div class="footer-note">
+          Շուտով այստեղ կլինեն նաև նոր նյութեր Shopify-ի, Upwork-ի և freelancing-ի մասին։
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
